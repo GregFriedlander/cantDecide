@@ -1,0 +1,93 @@
+#main-body{
+    margin-top: -20px;
+    margin-left: -8px;
+    margin-right: -8px;
+    margin-bottom: -20px;
+}
+.form-half{
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+.row{
+    width: 100%;
+}
+h1{
+    text-align: center
+}
+h3.description{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+h3.description2{
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+table{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5%;
+}
+.red{
+    color: red;
+}
+h1.selection{
+    text-align: center;
+}
+#formTable {
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+    border-collapse: collapse;
+    width: 75%;
+}
+#formTable td, #formTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+#formTable tr:nth-child(even){
+    background-color: #f2f2f2;
+}
+#formTable tr.submit{
+    background-color: green;
+}
+#formTable tr:hover {
+    background-color: #ddd;
+}
+#result-half{
+    font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;    
+    padding-bottom: 6%;
+}
+.result{
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 2%;
+}
+.selection-name{
+    display: inline-block;
+}
+.result img{
+    /* float: right; */
+    width: 50%;
+    margin-left: 20%;
+}
+.left-result{
+    width: 48%;
+    display: inline-block;
+    vertical-align: top;
+}
+.right-result{
+    width: 48%;
+    display: inline-block;
+}
+.right-result a {
+    background-color: #f44336;
+    color: white;
+    padding: 14px 25px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    width: 30%;
+    margin-left: 20%;
+}
+

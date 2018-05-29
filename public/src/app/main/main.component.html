@@ -1,0 +1,103 @@
+<!-- <button (click)="testCall()">Test Call</button>
+<br>
+Area :<input type="text" (keyup)="onNameKeyUp($event)">
+<button (click)="searchArea()">Search Area</button>
+
+<h3>{{bar}}</h3> -->
+
+<!-- <form (submit)="cantDecide()" #searchForm="ngForm">
+  Type: 
+  <input type="text" name="type" required [(ngModel)]="newSearch.term">
+  Neighborhood/Zip Code: 
+  <input type="text" required name="city" [(ngModel)]="newSearch.city">
+  Radius: 
+  <input type="number" name="radius" required [(ngModel)]="newSearch.radius">
+  Price (include up to): 
+  <input type="radio" name="price" value="1" required [(ngModel)]="newSearch.price">$ 
+  <input type="radio" name="price" value="1, 2" required [(ngModel)]="newSearch.price">$$ 
+  <input type="radio" name="price" value="1, 2, 3" required [(ngModel)]="newSearch.price">$$$ 
+  <input type="radio" name="price" value="1, 2,3, 4" required [(ngModel)]="newSearch.price">$$$$ 
+  Mood: 
+  <select name="mood" [(ngModel)]="newSearch.mood" required>
+    <option value="safe">Safe</option>
+    <option value="medium">Somewhere Inbetween</option>
+    <option value="risky">Take A Risk</option>
+  </select>
+  Submit: <input type="submit" name="action" [disabled]="searchForm.invalid">
+</form> -->
+
+<div id="main-body">
+  <div class="form-half">
+    <div class="row">
+      <h1>Can't Decide What To Eat?</h1>
+      <h3 class="description">Let us help you choose a place to eat when you and your friends can't decide. Just put in the type of food you want, where you want it, how much you want to pay, and if you want to play it safe or take a chance!!</h3>
+      <h3 class="description2">We'll randomly generate a resturant based on your criteria! Fill out the form Below!</h3>
+    </div>
+    <div class="row">
+      <div id="form-section">
+        <form (submit)="cantDecide()" #searchForm="ngForm">
+          <table id="formTable">
+            <tr>
+              <td>Type: <span class="red">*</span></td>
+              <td><input type="text" name="type" required [(ngModel)]="newSearch.term"></td>
+            </tr>
+            <tr>
+              <td>Neighborhood: <span class="red">*</span></td>
+              <td><input type="text" required name="city" [(ngModel)]="newSearch.city"></td>
+            </tr>
+            <tr>
+              <td>Radius: <span class="red">*</span></td>
+              <td><input type="number" name="radius" required [(ngModel)]="newSearch.radius"></td>
+            </tr>
+            <tr>
+              <td>Price (Include Up To...) <span class="red">*</span></td>
+              <td>
+                <input type="radio" name="price" value="1" required [(ngModel)]="newSearch.price">$ 
+                <input type="radio" name="price" value="1, 2" required [(ngModel)]="newSearch.price">$$ 
+                <input type="radio" name="price" value="1, 2, 3" required [(ngModel)]="newSearch.price">$$$ 
+                <input type="radio" name="price" value="1, 2,3, 4" required [(ngModel)]="newSearch.price">$$$$ 
+              </td>
+            </tr>
+            <tr>
+              <td>Mood: <span class="red">*</span></td>
+              <td>
+                <select name="mood" [(ngModel)]="newSearch.mood" required>
+                  <option value="safe">Safe</option>
+                  <option value="medium">Somewhere Inbetween</option>
+                  <option value="risky">Take A Risk</option>
+                </select>
+              </td>
+            </tr>
+            <tr class="submit">
+              <td>Submit:</td>
+              <td><input type="submit" name="action" [disabled]="searchForm.invalid"></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <div id="result-half">
+    <div class="row">
+      <h1 class="selection">Your Selection!</h1>
+    </div>
+    <div class="row">
+      <div class="result">
+        <div class="left-result">
+          <h2 class="selection-name">{{ randomSelection.name }}</h2>
+          <h4><a href="https://maps.google.com/?q={{ randomSelection.location.display_address[0] }}, {{ randomSelection.location.display_address[1] }}" target="_blank">{{ randomSelection.location.display_address[0] }}, {{ randomSelection.location.display_address[1] }}</a></h4>
+          <h3 *ngIf="randomSelection.name != undefined">Price: {{ randomSelection.price }}</h3>
+          <h3 *ngIf="randomSelection.name != undefined">Rating: {{ randomSelection.rating }}</h3>
+          <h3 *ngIf="randomSelection.name != undefined">Phone: <a href="tel: {{ randomSelection.display_phone }}">{{ randomSelection.display_phone }}</a></h3>
+        </div>
+        <div class="right-result">
+          <img src="{{ randomSelection.image_url }}" alt="">
+          <a href="{{ randomSelection.url }}" target="_blank" *ngIf="randomSelection.name != undefined">View On Yelp!</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
